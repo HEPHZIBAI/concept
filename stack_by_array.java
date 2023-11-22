@@ -1,5 +1,5 @@
 import java.util.Scanner;  
-class Stack   
+class stack_by_array  
 {  
     int top;   
     int maxsize = 10;  
