@@ -63,8 +63,7 @@ void main ()
                 		printf("Please Enter valid choice \n");  
             		}   
         	}
-           	printf("\ndo you want to continue 1-yes 0-no  ");
-            	scanf("%d",&k);
+           	
     	}  
 }   
   
