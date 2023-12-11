@@ -1,13 +1,13 @@
 #include <stdio.h>  
  
-int stack[100],i,j,choice=0,n,top=-1;  
+int stack[100],i,j,choice=0,n,top=-1,k=1;  
 
 void push();  
 void pop();  
-void show();  
-void top();
+void display();  
+void topval();
 void isempty();
-void size();
+
 
 void main ()  
 {
@@ -15,54 +15,56 @@ void main ()
 	scanf("%d",&n);
 	printf("*********Stack operations using array*********");
 	printf("\n----------------------------------------------\n");  
-    	while(choice != 7)  
+    	while(k)  
     	{  
         	printf("Chose one from the below options...\n");  
-        	printf("\n1.Push\n2.Pop\n3.Show\n4.top\n5.isempty\n6.size\n7.Exit");  
-        	printf("\n Enter your choice \n");        
+        	printf("\n1.Push\n2.Pop\n3.display\n4.top\n5.isempty\n");  
+        	printf("\n Enter your choice :");        
         	scanf("%d",&choice);  
         	switch(choice)  
         	{
 			case 1:
 			{   
                 		push();  
+                		printf("\ndo you want to continue 1-yes 0-no  ");
+            			scanf("%d",&k);
                 		continue;
 			}  
 			case 2:  
             		{  
                 		pop();  
+                		printf("\ndo you want to continue 1-yes 0-no  ");
+            			scanf("%d",&k);
                 		continue; 
             		}  
             		case 3:  
             		{  
-                		show();  
+                		display(); 
+                		printf("\ndo you want to continue 1-yes 0-no  ");
+            			scanf("%d",&k);
                 		continue; 
             		}  
 			case 4:  
             		{
-				top();  
+				topval();  
+				printf("\ndo you want to continue 1-yes 0-no  ");
+            			scanf("%d",&k);
                 		continue; 
 			}
                 	case 5:  
             		{  
-                		isempty();  
+                		isempty(); 
+                		printf("\ndo you want to continue 1-yes 0-no  ");
+            			scanf("%d",&k);
                 		continue; 
-			}
-			case 6:  
-            		{  
-				size();  
-                		continue; 
-			}                		
-            		case 7:   
-            		{  
-                		printf("Exiting....");  
-                		break;   
-            		}  
+			}          		
             		default:  
             		{  
-                		printf("Please Enter valid choice ");  
+                		printf("Please Enter valid choice \n");  
             		}   
         	}
+           	printf("\ndo you want to continue 1-yes 0-no  ");
+            	scanf("%d",&k);
     	}  
 }   
   
@@ -76,18 +78,20 @@ void push ()
         printf("Enter the value?");  
         scanf("%d",&val);         
         top = top +1;   
-        stack[top] = val;   
-    }   
+        stack[top] = val;  
+    }
+	display();
 }   
   
 void pop ()   
 {   
     if(top == -1)   
-    printf("Underflow");  
+    	printf("Underflow");  
     else  
-    top = top -1;   
+    	top = top -1;   
+	display();
 }   
-void show()  
+void display()  
 {  
     for (i=top;i>=0;i--)  
     {  
@@ -99,18 +103,14 @@ void show()
     }  
 }  
 
-void top()
+void topval()
 {
 	printf("%d",stack[top]);
 }
 void isempty()
 {
 	if(top<0)
-		printf("true");
+		printf("\nit is empty");
 	else
-		printf("false");
-}
-void size()
-{
-	printf("%d",top);
+		printf("\nit is not empty ");
 }
