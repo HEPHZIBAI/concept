@@ -16,14 +16,14 @@ class Stack
     }  
     boolean push (Scanner sc)  
     {  
-        if(top == maxsize-1)  
+        if(top == maxsize)  
         {  
-            System.out.println("Overflow !!");  
+            System.out.println("\n Overflow");  
             return false;  
         }  
         else   
         {  
-            System.out.println("Enter Value");  
+            System.out.print("\nEnter the value? ");  
             int val = sc.nextInt();  
             top++;  
             arr[top]=val;  
@@ -36,27 +36,30 @@ class Stack
     {  
         if (top == -1)  
         {  
-            System.out.println("Underflow !!");  
+            System.out.println("Underflow");  
             return false;  
         }  
         else   
         {  
             top --;   
-            System.out.println("Item popped");  
             display();
             return true;  
         }  
     }  
     void display ()  
     {  
-        System.out.println("Printing stack elements .....");  
+        //System.out.println("Printing stack elements .....");  
         for(int i = top; i>=0;i--)  
         {  
             System.out.println(arr[i]);  
         }  
     }  
+    void topval()
+    {
+        System.out.println(arr[top]);
+    }
 }  
-public class Main
+public class stack_by_array
 {  
     public static void main(String[] args) 
     {  
@@ -68,11 +71,11 @@ public class Main
         s.maxsize=sc.nextInt();
         System.out.println("*********Stack operations using array*********\n");  
         System.out.println("\n------------------------------------------------\n");  
-        while(k)  
+        while(k==1)  
         {  
             System.out.println("\nChose one from the below options...\n");  
             System.out.println("\n1.Push\n2.Pop\n3.display\n4.top\n5.isempty\n");  
-            System.out.println("\n Enter your choice \n");        
+            System.out.print("\n Enter your choice : ");        
             choice = sc.nextInt();  
             switch(choice)  
             {  
@@ -106,7 +109,7 @@ public class Main
                 }  
                 case 5:  
             	{  
-                	s.isempty(); 
+                	s.isEmpty(); 
                 	System.out.println("\ndo you want to continue 1-yes 0-no  ");
             		k=sc.nextInt();
             		continue; 
