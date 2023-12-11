@@ -1,5 +1,5 @@
 import java.util.Scanner;  
-class stack_by_array  
+class Stack
 {  
     int top;   
     int maxsize = 10;  
@@ -43,7 +43,7 @@ class stack_by_array
         {  
             top --;   
             System.out.println("Item popped");  
-            display()
+            display();
             return true;  
         }  
     }  
@@ -56,43 +56,61 @@ class stack_by_array
         }  
     }  
 }  
-public class Stack_Operations 
+public class Main
 {  
     public static void main(String[] args) 
     {  
         int choice=0;  
         Scanner sc = new Scanner(System.in);  
-        Stack s = new Stack();  
+        Stack s = new Stack();
+        int k=1;
+        System.out.print("Enter the number of elements in the stack ");
+        s.maxsize=sc.nextInt();
         System.out.println("*********Stack operations using array*********\n");  
         System.out.println("\n------------------------------------------------\n");  
-        while(choice != 4)  
+        while(k)  
         {  
             System.out.println("\nChose one from the below options...\n");  
-            System.out.println("\n1.Push\n2.Pop\n3.Show\n4.Exit");  
+            System.out.println("\n1.Push\n2.Pop\n3.display\n4.top\n5.isempty\n");  
             System.out.println("\n Enter your choice \n");        
             choice = sc.nextInt();  
             switch(choice)  
             {  
                 case 1:  
                 {   
-                    s.push(sc);  
+                    s.push(sc);
+                    System.out.println("\ndo you want to continue 1-yes 0-no  ");
+            		k=sc.nextInt();
                     continue; 
                 }  
                 case 2:  
                 {  
                     s.pop();  
+                    System.out.println("\ndo you want to continue 1-yes 0-no  ");
+            		k=sc.nextInt();
                     continue; 
                 }  
                 case 3:  
                 {  
-                    s.display();  
+                    s.display(); 
+                    System.out.println("\ndo you want to continue 1-yes 0-no  ");
+            		k=sc.nextInt();
                     continue; 
                 }  
                 case 4:   
                 {  
-                    System.out.println("Exiting....");  
-                    break;   
+                    s.topval();
+                    System.out.println("\ndo you want to continue 1-yes 0-no  ");
+            		k=sc.nextInt();
+                    continue;   
                 }  
+                case 5:  
+            	{  
+                	s.isempty(); 
+                	System.out.println("\ndo you want to continue 1-yes 0-no  ");
+            		k=sc.nextInt();
+            		continue; 
+	        	} 
                 default:  
                 {  
                     System.out.println("Please Enter valid choice ");  
