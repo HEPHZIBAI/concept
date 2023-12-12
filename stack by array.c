@@ -70,7 +70,7 @@ void main ()
 void push ()  
 {  
     int val;      
-    if (top == n )   
+    if (top == n-1 )   
     	printf("\n Overflow\n");   
     else   
     {  
@@ -85,7 +85,7 @@ void push ()
 void pop ()   
 {   
     if(top == -1)   
-    	printf("Underflow");  
+    	printf("\nUnderflow\n");  
     else  
     	top = top -1;   
 	display();
@@ -98,7 +98,7 @@ void display()
     }  
     if(top == -1)   
     {  
-        printf("Stack is empty");  
+        printf("\nStack is empty\n");  
     }  
 }  
 
