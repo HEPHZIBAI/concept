@@ -71,7 +71,7 @@ void push ()
 {  
     int val;      
     if (top == n )   
-    	printf("\n Overflow");   
+    	printf("\n Overflow\n");   
     else   
     {  
         printf("Enter the value?");  
