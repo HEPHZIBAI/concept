@@ -1,50 +1,50 @@
 import static java.lang.System.exit;
-
-class stack_using_linke_list
+import java.util.Scanner;
+class Main
 {
 	public static void main(String[] args)
 	{
 		
-		StackUsingLinkedlist obj= new StackUsingLinkedlist();
+		StackUsingLinkedlist s= new StackUsingLinkedlist();
 		int choice=0;  
-        	Scanner sc = new Scanner(System.in);   
-        	System.out.println("*********Stack operations using array*********\n");  
-        	System.out.println("\n------------------------------------------------\n");  
-        	while(choice != 4)  
-        	{  
-            		System.out.println("\nChose one from the below options...\n");  
-            		System.out.println("\n1.Push\n2.Pop\n3.Show\n4.Exit");  
-            		System.out.println("\n Enter your choice \n");        
-            		choice = sc.nextInt();  
-            		switch(choice)  
-            		{  
-                		case 1:  
-                		{   
-                    			s.push(sc);  
-                    			continue; 
-                		}  
-                		case 2:  
-                		{  
-                    			s.pop();  
-                    			continue; 
-                		}  
-                		case 3:  
-                		{  
-                    			s.display();  
-                    			continue; 
-                		}  
-                		case 4:   
-                		{  
-                    			System.out.println("Exiting....");  
-                    			break;   
-                		}  
-                		default:  
-                		{  
-                    			System.out.println("Please Enter valid choice ");  
-                		}   
+        Scanner sc = new Scanner(System.in);   
+    	System.out.println("*********Stack operations using array*********\n");  
+    	System.out.println("\n------------------------------------------------\n");  
+    	while(choice != 4)  
+    	{  
+        	System.out.println("\nChose one from the below options...\n");  
+        	System.out.println("\n1.Push\n2.Pop\n3.Show\n4.Exit");  
+            System.out.println("\n Enter your choice \n");        
+        	choice = sc.nextInt();  
+    		switch(choice)  
+            {  
+        		case 1:  
+        		{   
+        			s.push();  
+                	continue; 
+            	}  
+        		case 2:  
+        		{  
+                    s.pop();  
+                    continue; 
+            	}  
+                case 3:  
+        		{  
+                    s.display();  
+        			continue; 
+        		}  
+                case 4:   
+        		{  
+        		    System.out.println("Exiting....");  
+                    break;   
+            	}  
+        		default:  
+            	{  
+        			System.out.println("Please Enter valid choice ");  
+        		}   
 			}
-	}
-
+	    }
+    }
 }
 class StackUsingLinkedlist 
 {
@@ -63,12 +63,15 @@ class StackUsingLinkedlist
 	}
 
 	
-	public void push(int x) 
+	public void push() 
 	{
+	    Scanner sc = new Scanner(System.in);  
+	    System.out.print("ente the value ");
+	    int x=sc.nextInt();
 		Node temp = new Node();
 		if (temp == null) 
 		{
-			System.out.print("\nHeap Overflow");
+			System.out.print("\nstack is Overflow");
 			return;
 		}
 
